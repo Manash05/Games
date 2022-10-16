@@ -1,10 +1,12 @@
+# Rock Paper Scissors game using python
+
 import random
 import time
 
-h = 1
+h = 1       # Loop
 while h == 1:
     print("\tWelcome to the game of ROCK, PAPER and SCISSORS\n")
-    print("The game will be of ten (10) points.")
+    print("The game will be of ten (10) points.")   # Instruction
     your_score = 0
     comp_score = 0
     count = 1
@@ -12,16 +14,16 @@ while h == 1:
         print("\n", end='')
         print(count, end=' ')
         you = input("'r' for Rock\n  'p' for Paper\n  's' for Scissor\nEnter your choice: ")
-        your_choice = you.lower()
+        your_choice = you.lower()               # Changes letter to lower case
         c_choice = ["r", "p", "s"]
-        comp_choice = random.choice(c_choice)
+        comp_choice = random.choice(c_choice)   # Computer chose random choice
         if your_choice == "r":
             if comp_choice == "s":
-                your_score += 1
+                your_score += 1     # Updating score
                 print("\n\t SCOREBOARD")
                 print("You chose ROCK\nComputer chose SCISSORS")
                 print("Your score = ", your_score, "\nComputer score = ", comp_score)
-                time.sleep(0.5)
+                time.sleep(0.5)     # Program sleeps for 0.5 second
             elif comp_choice == "p":
                 comp_score += 1
                 print("\n\t SCOREBOARD")
@@ -73,12 +75,12 @@ while h == 1:
             print("Wrong Input.")
         count += 1
     print("\n--GAME RESULT--")
-    if your_score == comp_score:
+    if your_score == comp_score:                    # Draw
         print("GAME DRAWN")
-    elif your_score > comp_score:
+    elif your_score > comp_score:                   # User win
         print("HURRAH...YOU WON")
     else:
-        print("YOU LOST...BETTER LUCK NEXT TIME")
+        print("YOU LOST...BETTER LUCK NEXT TIME")   # Computer win
     print("--Thank You--")
     h = int(input("Enter 1 to continue\nEnter 2 to exit: "))
 if h == 2:
